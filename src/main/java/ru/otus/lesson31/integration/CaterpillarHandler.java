@@ -25,11 +25,9 @@ public class CaterpillarHandler {
         return new Cocoon(caterpillar.getName(), caterpillar.getAge());
     }
 
-
     @ServiceActivator(inputChannel = "errorChannel")
     public void handleRuntimeException(ErrorMessage errorMessage) {
         System.out.println("Произошла ошибка: " + errorMessage.getPayload());
     }
-
 }
 

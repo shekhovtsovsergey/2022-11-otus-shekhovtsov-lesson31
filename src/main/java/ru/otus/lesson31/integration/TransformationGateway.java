@@ -6,7 +6,7 @@ import ru.otus.lesson31.model.Butterfly;
 import ru.otus.lesson31.model.Caterpillar;
 
 
-@MessagingGateway
+@MessagingGateway(errorChannel = "errorChannel")
 public interface TransformationGateway {
     @Gateway(requestChannel = "caterpillarChannel", replyChannel = "butterflyChannel")
     Butterfly transform(Caterpillar caterpillar);
